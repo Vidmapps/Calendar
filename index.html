@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <div id="container">
+      <div id="header">
+        <div id="monthDisplay"></div>
+        <div>
+          <button id="backButton">Back</button>
+          <button id="nextButton">Next</button>
+        </div>
+      </div>
+
+      <div id="weekdays">
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
+        <div>Sunday</div>
+      </div>
+
+      <div id="calendar"></div>
+    </div>
+
+    <div id="newEventModal">
+      <h2>New event</h2>
+      <input type="text" id="eventTitleInput" class="eventInputStyle" placeholder="Event title" maxlength="50" required/>
+      <input type="date" id="eventDateInput" class="eventInputStyle" required/>
+      <div id="eventTimeInput">
+        <input type="time" id="eventStartTimeInput" class="eventInputStyle" required/>
+        <input type="time" id="eventEndTimeInput" class="eventInputStyle" required/>
+      </div>
+      <form action="#">
+        <label for="eventTypeInput">Choose an event type:</label>
+        <select name="events" id="eventTypeInput" class="eventInputStyle" required>
+          <option value="eventMeeting">Meeting</option>
+          <option value="eventCall">Call</option>
+          <option value="eventOutOfOffice">Out of office</option>
+        </select>
+      </form>
+      <textarea id="eventDescriptionInput" class="eventInputStyle" name="description" placeholder="Event Description" rows="4" cols="50"></textarea>
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+        <ul>
+            <li>
+                <h2 id="eventTitle"></h3>
+            </li>
+            <li>
+                <div id="eventDate"></div>
+                <span id="eventStartTime"></span>
+                -
+                <span id="eventEndTime"></span>
+            </li>
+            <li id="eventType"></li>
+            <li id="eventDescription"></li>
+        </ul>
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+    <script src="index.js"></script>
+    
+  </body>
+</html>
